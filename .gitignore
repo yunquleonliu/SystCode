@@ -1,0 +1,18 @@
+﻿# Binaries
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.dll
+*.so
+*.out
+*.dylib
+
+# Build directories
+bin/
+build/
+obj/
+
+# Editor files
+.vscode/
+*.swp
