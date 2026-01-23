@@ -1,18 +1,62 @@
-﻿# Binaries
-*.exe
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
 *.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Windows Debugging and Build
 *.pdb
 *.ilk
-*.dll
-*.so
-*.out
-*.dylib
+*.exp
+*.suo
+*.user
+*.idb
+*.opensdf
+*.sdf
 
-# Build directories
+# Build Directories
 bin/
 build/
 obj/
+Debug/
+Release/
+x64/
+x86/
 
-# Editor files
+# Python
+__pycache__/
+*.py[cod]
+
+# Editor / IDE
 .vscode/
+.idea/
 *.swp
+*.swo
+.DS_Store
