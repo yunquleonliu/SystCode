@@ -32,6 +32,9 @@
 2. Stress/preemption test with concurrent callers.
 3. Fault-injection test (timeouts, invalid input, resource exhaustion).
 
+## Existing Detailed Draft
+- This spec serves as the detailed draft for E080.
+
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
