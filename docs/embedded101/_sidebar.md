@@ -1,11 +1,11 @@
-- [Embedded Home](README.md)
+- [Embedded Home](/embedded101/README.md)
 - **Core**
-  - [Roadmap](embedded_software_roadmap.md)
-  - [Specs Index](embedded_specs_index.md)
-  - [Impl Index](embedded_problem_impl_index.md)
-  - [Problem Template](embedded_problem_template.md)
+  - [Roadmap](/embedded101/embedded_software_roadmap.md)
+  - [Specs Index](/embedded101/embedded_specs_index.md)
+  - [Impl Index](/embedded101/embedded_problem_impl_index.md)
+  - [Problem Template](/embedded101/embedded_problem_template.md)
 
 - **DevEnv**
-  - [DevEnv Overview](embedded_devenv.md)
-  - [DevEnv Index](embedded_devenv_index.md)
-  - [DevEnv Impl Index](embedded_devenv_impl_index.md)
+  - [DevEnv Overview](/embedded101/embedded_devenv.md)
+  - [DevEnv Index](/embedded101/embedded_devenv_index.md)
+  - [DevEnv Impl Index](/embedded101/embedded_devenv_impl_index.md)

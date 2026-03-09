@@ -2,6 +2,6 @@
 
 A focused track to cover practical firmware ecosystems, platform-specific development, hardware debug, and team process expectations from embedded product roles.
 
-- Overview index: [embedded_devenv_index.md](embedded_devenv_index.md)
-- Existing Embedded roadmap: [embedded_software_roadmap.md](embedded_software_roadmap.md)
-- DevEnv implementation map: [embedded_devenv_impl_index.md](embedded_devenv_impl_index.md)
+- Overview index: [embedded_devenv_index.md](/embedded101/embedded_devenv_index.md)
+- Existing Embedded roadmap: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
+- DevEnv implementation map: [embedded_devenv_impl_index.md](/embedded101/embedded_devenv_impl_index.md)
