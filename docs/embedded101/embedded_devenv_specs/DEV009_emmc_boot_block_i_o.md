@@ -26,4 +26,4 @@
 - Scripts/log capture format for repeatable validation.
 
 ## Reference Implementation
-- C source: [../../problems/embedded101/embedded_devenv/DEV009_emmc_boot_block_i_o/solution.c](../../problems/embedded101/embedded_devenv/DEV009_emmc_boot_block_i_o/solution.c)
+- C source: [../../problems/embedded101/embedded_devenv/DEV009_emmc_boot_block_i_o/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/embedded_devenv/DEV009_emmc_boot_block_i_o/solution.c)

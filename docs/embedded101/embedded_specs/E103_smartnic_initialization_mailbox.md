@@ -39,4 +39,4 @@
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
 
 ## Reference Implementation
-- C source: [../../problems/embedded101/embedded/E103_smartnic_initialization_mailbox/solution.c](../../problems/embedded101/embedded/E103_smartnic_initialization_mailbox/solution.c)
+- C source: [../../problems/embedded101/embedded/E103_smartnic_initialization_mailbox/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/embedded/E103_smartnic_initialization_mailbox/solution.c)

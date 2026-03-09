@@ -26,4 +26,4 @@
 - Scripts/log capture format for repeatable validation.
 
 ## Reference Implementation
-- C source: [../../problems/embedded101/embedded_devenv/DEV006_tpm_2_0_measured_boot_basics/solution.c](../../problems/embedded101/embedded_devenv/DEV006_tpm_2_0_measured_boot_basics/solution.c)
+- C source: [../../problems/embedded101/embedded_devenv/DEV006_tpm_2_0_measured_boot_basics/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/embedded_devenv/DEV006_tpm_2_0_measured_boot_basics/solution.c)

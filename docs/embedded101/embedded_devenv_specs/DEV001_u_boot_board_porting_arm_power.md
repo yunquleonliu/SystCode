@@ -26,4 +26,4 @@
 - Scripts/log capture format for repeatable validation.
 
 ## Reference Implementation
-- C source: [../../problems/embedded101/embedded_devenv/DEV001_u_boot_board_porting_arm_power/solution.c](../../problems/embedded101/embedded_devenv/DEV001_u_boot_board_porting_arm_power/solution.c)
+- C source: [../../problems/embedded101/embedded_devenv/DEV001_u_boot_board_porting_arm_power/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/embedded_devenv/DEV001_u_boot_board_porting_arm_power/solution.c)

@@ -26,4 +26,4 @@
 - Scripts/log capture format for repeatable validation.
 
 ## Reference Implementation
-- C source: [../../problems/embedded101/embedded_devenv/DEV004_board_bring_up_from_datasheet_schematic/solution.c](../../problems/embedded101/embedded_devenv/DEV004_board_bring_up_from_datasheet_schematic/solution.c)
+- C source: [../../problems/embedded101/embedded_devenv/DEV004_board_bring_up_from_datasheet_schematic/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/embedded_devenv/DEV004_board_bring_up_from_datasheet_schematic/solution.c)

@@ -36,4 +36,4 @@
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
 
 ## Reference Implementation
-- C source: [../../problems/embedded101/embedded/E027_round_robin_time_slicing/solution.c](../../problems/embedded101/embedded/E027_round_robin_time_slicing/solution.c)
+- C source: [../../problems/embedded101/embedded/E027_round_robin_time_slicing/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/embedded/E027_round_robin_time_slicing/solution.c)

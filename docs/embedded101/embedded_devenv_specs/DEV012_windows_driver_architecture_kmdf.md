@@ -26,4 +26,4 @@
 - Scripts/log capture format for repeatable validation.
 
 ## Reference Implementation
-- C source: [../../problems/embedded101/embedded_devenv/DEV012_windows_driver_architecture_kmdf/solution.c](../../problems/embedded101/embedded_devenv/DEV012_windows_driver_architecture_kmdf/solution.c)
+- C source: [../../problems/embedded101/embedded_devenv/DEV012_windows_driver_architecture_kmdf/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/embedded_devenv/DEV012_windows_driver_architecture_kmdf/solution.c)

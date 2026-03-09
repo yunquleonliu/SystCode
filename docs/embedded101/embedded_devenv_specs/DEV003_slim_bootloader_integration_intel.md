@@ -26,4 +26,4 @@
 - Scripts/log capture format for repeatable validation.
 
 ## Reference Implementation
-- C source: [../../problems/embedded101/embedded_devenv/DEV003_slim_bootloader_integration_intel/solution.c](../../problems/embedded101/embedded_devenv/DEV003_slim_bootloader_integration_intel/solution.c)
+- C source: [../../problems/embedded101/embedded_devenv/DEV003_slim_bootloader_integration_intel/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/embedded_devenv/DEV003_slim_bootloader_integration_intel/solution.c)

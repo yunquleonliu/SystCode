@@ -26,4 +26,4 @@
 - Scripts/log capture format for repeatable validation.
 
 ## Reference Implementation
-- C source: [../../problems/embedded101/embedded_devenv/DEV013_hardware_debug_tooling_lab/solution.c](../../problems/embedded101/embedded_devenv/DEV013_hardware_debug_tooling_lab/solution.c)
+- C source: [../../problems/embedded101/embedded_devenv/DEV013_hardware_debug_tooling_lab/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/embedded_devenv/DEV013_hardware_debug_tooling_lab/solution.c)
