@@ -39,66 +39,66 @@ Master the art of manual memory manipulation and allocator design.
 
 | # | Problem | Description | Key Concepts | Status |
 |---|---------|-------------|--------------|:---:|
-| 1 | **[Aligned Malloc](01_aligned_malloc.md)** | Implement an allocator with custom alignment support. | Bitwise Ops, Pointer Arithmetic | ✅ |
-| 2 | **[Memmove](02_memmove_overlap_safe.md)** | Safe memory copy handling overlapping regions. | Address Comparison, Reverse Copy | ⬜ |
-| 3 | **[Arena Allocator](03_arena_allocator.md)** | Fixed-size memory pool with batch freeing. | Pointer Bump, O(1) Allocation | ⬜ |
-| 4 | **[Buddy System](04_buddy_system.md)** | Kernel-style allocator for power-of-2 blocks. | Binary Trees, Block Merging/Splitting | ⬜ |
-| 5 | **[Intrusive Ref Counting](05_reference_counting_intrusive.md)** | Smart pointer implementation embedded in data. | `offsetof`, Atomic Inc/Dec | ⬜ |
+| 1 | **[Aligned Malloc](docs/01_aligned_malloc.md)** | Implement an allocator with custom alignment support. | Bitwise Ops, Pointer Arithmetic | ✅ |
+| 2 | **[Memmove](docs/02_memmove_overlap_safe.md)** | Safe memory copy handling overlapping regions. | Address Comparison, Reverse Copy | ⬜ |
+| 3 | **[Arena Allocator](docs/03_arena_allocator.md)** | Fixed-size memory pool with batch freeing. | Pointer Bump, O(1) Allocation | ⬜ |
+| 4 | **[Buddy System](docs/04_buddy_system.md)** | Kernel-style allocator for power-of-2 blocks. | Binary Trees, Block Merging/Splitting | ⬜ |
+| 5 | **[Intrusive Ref Counting](docs/05_reference_counting_intrusive.md)** | Smart pointer implementation embedded in data. | `offsetof`, Atomic Inc/Dec | ⬜ |
 
 ### Module 2: Concurrency & Sync (并发与同步)
 Build synchronization primitives from scratch using atomics.
 
 | # | Problem | Description | Key Concepts | Status |
 |---|---------|-------------|--------------|:---:|
-| 6 | **[Spinlock (CAS)](06_spinlock_cas.md)** | User-space spinlock using atomic exchange. | `__atomic`, Busy-Wait Optimization | ⬜ |
-| 7 | **[Lock-free Stack](../problems/07_lock_free_stack)** | Thread-safe stack without mutexes. | ABA Problem, CAS Loops | ⬜ |
-| 8 | **[Thread Pool](../problems/08_thread_pool)** | Fixed-size worker pool for task execution. | Condition Variables, Task Queues | ⬜ |
-| 9 | **[Read-Write Lock](../problems/09_read_write_lock)** | Implement a writer-preferred RW lock. | Starvation Prevention, State Flags | ⬜ |
-| 10 | **[Barrier](../problems/10_barrier)** | Thread synchronization barrier. | Thread Counting, Release Points | ⬜ |
+| 6 | **[Spinlock (CAS)](docs/06_spinlock_cas.md)** | User-space spinlock using atomic exchange. | `__atomic`, Busy-Wait Optimization | ⬜ |
+| 7 | **[Lock-free Stack](problems/07_lock_free_stack)** | Thread-safe stack without mutexes. | ABA Problem, CAS Loops | ⬜ |
+| 8 | **[Thread Pool](problems/08_thread_pool)** | Fixed-size worker pool for task execution. | Condition Variables, Task Queues | ⬜ |
+| 9 | **[Read-Write Lock](problems/09_read_write_lock)** | Implement a writer-preferred RW lock. | Starvation Prevention, State Flags | ⬜ |
+| 10 | **[Barrier](problems/10_barrier)** | Thread synchronization barrier. | Thread Counting, Release Points | ⬜ |
 
 ### Module 3: OS & Low-Level I/O (操作系统与底层 I/O)
 Simulate core OS components and file operations.
 
 | # | Problem | Description | Key Concepts | Status |
 |---|---------|-------------|--------------|:---:|
-| 11 | **[Page Table Walk](../problems/11_page_table_walk)** | Simulate virtual to physical address translation. | Multi-level Pages, MMU Simulation | ⬜ |
-| 12 | **[Mmap Copy](../problems/12_mmap_copy)** | High-perf file copy using memory mapping. | `mmap`, `msync`, Page Faults | ⬜ |
-| 13 | **[ELF Parser](../problems/13_elf_header_parser)** | Parse binary headers to find entry points. | Struct Mapping, Endianness | ⬜ |
-| 14 | **[Ring Buffer](../problems/14_ring_buffer)** | Lock-free circular buffer for IPC/Audio. | Producer/Consumer Indices, Modulo | ⬜ |
-| 15 | **[User Context Switch](../problems/15_user_space_context_switch)** | Simulate coroutine context switching. | `setjmp`/`longjmp`, Register Save/Restore | ⬜ |
+| 11 | **[Page Table Walk](problems/11_page_table_walk)** | Simulate virtual to physical address translation. | Multi-level Pages, MMU Simulation | ⬜ |
+| 12 | **[Mmap Copy](problems/12_mmap_copy)** | High-perf file copy using memory mapping. | `mmap`, `msync`, Page Faults | ⬜ |
+| 13 | **[ELF Parser](problems/13_elf_header_parser)** | Parse binary headers to find entry points. | Struct Mapping, Endianness | ⬜ |
+| 14 | **[Ring Buffer](problems/14_ring_buffer)** | Lock-free circular buffer for IPC/Audio. | Producer/Consumer Indices, Modulo | ⬜ |
+| 15 | **[User Context Switch](problems/15_user_space_context_switch)** | Simulate coroutine context switching. | `setjmp`/`longjmp`, Register Save/Restore | ⬜ |
 
 ### Module 4: Networking (网络编程)
 Implement foundational network protocols and servers.
 
 | # | Problem | Description | Key Concepts | Status |
 |---|---------|-------------|--------------|:---:|
-| 16 | **[Epoll Echo Server](../problems/16_epoll_echo_server)** | High-concurrency event-driven server. | ET vs LT, Non-blocking I/O | ⬜ |
-| 17 | **[Endianness Swap](../problems/17_endianness_swap)** | Network byte order conversion for 64-bit ints. | Bit Shifts, Masking | ⬜ |
-| 18 | **[HTTP/1.1 Parser](../problems/18_http_parser)** | Zero-copy HTTP header parsing. | FSM, String Optimization | ⬜ |
-| 19 | **[TCP Flow Control](../problems/19_simple_tcp_flow_control)** | Simulate sliding window protocol. | Window Updates, ACKs | ⬜ |
-| 20 | **[Raw Socket ICMP](../problems/20_raw_socket_icmp)** | Construct and send Ping packets manually. | Checksums, Raw Sockets | ⬜ |
+| 16 | **[Epoll Echo Server](problems/16_epoll_echo_server)** | High-concurrency event-driven server. | ET vs LT, Non-blocking I/O | ⬜ |
+| 17 | **[Endianness Swap](problems/17_endianness_swap)** | Network byte order conversion for 64-bit ints. | Bit Shifts, Masking | ⬜ |
+| 18 | **[HTTP/1.1 Parser](problems/18_http_parser)** | Zero-copy HTTP header parsing. | FSM, String Optimization | ⬜ |
+| 19 | **[TCP Flow Control](problems/19_simple_tcp_flow_control)** | Simulate sliding window protocol. | Window Updates, ACKs | ⬜ |
+| 20 | **[Raw Socket ICMP](problems/20_raw_socket_icmp)** | Construct and send Ping packets manually. | Checksums, Raw Sockets | ⬜ |
 
 ### Module 5: Distributed Systems (分布式与协同)
 Understand the algorithms that power cloud infrastructure.
 
 | # | Problem | Description | Key Concepts | Status |
 |---|---------|-------------|--------------|:---:|
-| 21 | **[2PC (Two-Phase Commit)](../problems/21_two_phase_commit)** | Distributed transaction coordinator simulation. | Prepare/Commit Phases, Timeouts | ⬜ |
-| 22 | **[Consistent Hashing](../problems/22_consistent_hashing)** | Distributed cache node mapping. | Hash Ring, Virtual Nodes | ⬜ |
-| 23 | **[Vector Clock](../problems/23_vector_clock)** | Causality tracking in distributed events. | Version Vectors, Partial Ordering | ⬜ |
-| 24 | **[Gossip Protocol](../problems/24_gossip_protocol)** | Epidemic status propagation. | Randomized Fanout, Convergence | ⬜ |
-| 25 | **[Raft Heartbeat](../problems/25_raft_heartbeat)** | Leader election heartbeat mechanism. | Timers, Lease Management | ⬜ |
+| 21 | **[2PC (Two-Phase Commit)](problems/21_two_phase_commit)** | Distributed transaction coordinator simulation. | Prepare/Commit Phases, Timeouts | ⬜ |
+| 22 | **[Consistent Hashing](problems/22_consistent_hashing)** | Distributed cache node mapping. | Hash Ring, Virtual Nodes | ⬜ |
+| 23 | **[Vector Clock](problems/23_vector_clock)** | Causality tracking in distributed events. | Version Vectors, Partial Ordering | ⬜ |
+| 24 | **[Gossip Protocol](problems/24_gossip_protocol)** | Epidemic status propagation. | Randomized Fanout, Convergence | ⬜ |
+| 25 | **[Raft Heartbeat](problems/25_raft_heartbeat)** | Leader election heartbeat mechanism. | Timers, Lease Management | ⬜ |
 
 ### Module 6: Advanced OS Internals (Core OS Engineering)
 The deep logic that decides "Who runs?" and "Where is data stored?".
 
 | # | Problem | Description | Key Concepts | Status |
 |---|---------|-------------|--------------|:---:|
-| 26 | **[Round-Robin Scheduler](../problems/26_round_robin_scheduler)** | Runqueue simulation with time slicing. | Preemption, Quantum, Task States | ⬜ |
-| 27 | **[Simple File System](../problems/27_simple_file_system)** | Inode-based FS implementation on a virtual disk. | Inodes, Bitmaps, Superblock | ⬜ |
-| 28 | **[LSM-Tree](../problems/28_lsm_tree_storage)** | Log-Structured Merge Tree basics (Write path). | MemTable, SSTable, Write Amplification | ⬜ |
-| 29 | **[Mini Container](../problems/29_mini_container)** | Process isolation using Namespaces. | `clone`, `unshare`, PID/Mount Namespace | ⬜ |
-| 30 | **[Mini Debugger](../problems/30_mini_debugger)** | Tracer using `ptrace` syscall. | Registers, Breakpoints, System Calls | ⬜ |
+| 26 | **[Round-Robin Scheduler](problems/26_round_robin_scheduler)** | Runqueue simulation with time slicing. | Preemption, Quantum, Task States | ⬜ |
+| 27 | **[Simple File System](problems/27_simple_file_system)** | Inode-based FS implementation on a virtual disk. | Inodes, Bitmaps, Superblock | ⬜ |
+| 28 | **[LSM-Tree](problems/28_lsm_tree_storage)** | Log-Structured Merge Tree basics (Write path). | MemTable, SSTable, Write Amplification | ⬜ |
+| 29 | **[Mini Container](problems/29_mini_container)** | Process isolation using Namespaces. | `clone`, `unshare`, PID/Mount Namespace | ⬜ |
+| 30 | **[Mini Debugger](problems/30_mini_debugger)** | Tracer using `ptrace` syscall. | Registers, Breakpoints, System Calls | ⬜ |
 
 ---
 
@@ -225,12 +225,12 @@ The deep logic that decides "Who runs?" and "Where is data stored?".
 
 # Part II: Embedded Software & RTOS 101
 
-> **[View Full Detailed Roadmap Here](embedded_software_roadmap.md)**
+> **[View Full Detailed Roadmap Here](docs/embedded_software_roadmap.md)**
 
 ## Module 1: Bare Metal Essentials
 | # | Problem | Description |
 |---|---|---|
-| E01 | **[C Runtime Initialization (CRT0)](embedded_01_crt0.md)** | Initialize .bss/.data segments before main(). |
+| E01 | **[C Runtime Initialization (CRT0)](docs/embedded_01_crt0.md)** | Initialize .bss/.data segments before main(). |
 | E02 | **Linker Script Basics** | Place code in Flash and data in RAM. |
 | E03 | **Memory Map Layout** | Define stack, heap, and shared memory regions. |
 | E04 | **Register Bit Manipulation** | Type-safe register abstraction (volatile/bit-fields). |
@@ -252,7 +252,7 @@ The deep logic that decides "Who runs?" and "Where is data stored?".
 |---|---|---|
 | E26 | **Cooperative Scheduler** | simple run-to-completion scheduler. |
 | E29 | **Context Switch** | Save/Restore CPU registers (Assembly). |
-| E44 | **[Reentrancy Lab (The Gauntlet)](embedded_reentrancy_lab.md)** | Fix race conditions in a driver under preemption. |
+| E44 | **[Reentrancy Lab (The Gauntlet)](docs/embedded_reentrancy_lab.md)** | Fix race conditions in a driver under preemption. |
 | E45 | **Critical Sections** | `ENTER_CRITICAL` / `EXIT_CRITICAL`. |
 | E52 | **IPC Ring Buffer** | Lock-free communication between cores. |
 
@@ -262,7 +262,7 @@ The deep logic that decides "Who runs?" and "Where is data stored?".
 | # | Problem | Description |
 |---|---|---|
 | 102 | **PCIe Enumeration** | Scan PCI bus and map BARs. |
-| 103 | **[SmartNIC Initialization](embedded_smartnic_init.md)** | Admin Queue / Mailbox handshake. |
+| 103 | **[SmartNIC Initialization](docs/embedded_smartnic_init.md)** | Admin Queue / Mailbox handshake. |
 | 104 | **Ring Doorbell** | MMIO producer index updates. |
 | 105 | **Descriptor Chains** | Scatter-gather DMA descriptors. |
 | 106 | **Interrupt Moderation** | NAPI-style polling/interrupt hybrid. |
