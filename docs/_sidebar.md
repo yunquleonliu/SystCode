@@ -129,3 +129,11 @@
 
 * Module 14: Capstone
   * [101. Build Your Own Shell](101_capstone_shell.md)
+
+- **Embedded Software 101 (Docs First)**
+  - [Embedded Roadmap](embedded_software_roadmap.md)
+  - [Embedded Specs Index](embedded_specs_index.md)
+  - [Problem Spec Template](embedded_problem_template.md)
+  - [E001 CRT0](embedded_01_crt0.md)
+  - [E044 Reentrancy Lab](embedded_reentrancy_lab.md)
+  - [E103 SmartNIC Initialization](embedded_smartnic_init.md)
