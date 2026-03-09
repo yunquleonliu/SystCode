@@ -34,3 +34,6 @@
 
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
+
+## Reference Implementation
+- C source: [../../problems/embedded/E082_firmware_image_header/solution.c](../../problems/embedded/E082_firmware_image_header/solution.c)

@@ -34,3 +34,6 @@
 
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
+
+## Reference Implementation
+- C source: [../../problems/embedded/E050_earliest_deadline_first_edf/solution.c](../../problems/embedded/E050_earliest_deadline_first_edf/solution.c)

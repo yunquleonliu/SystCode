@@ -34,3 +34,6 @@
 
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
+
+## Reference Implementation
+- C source: [../../problems/embedded/E038_memory_pool_fixed_block/solution.c](../../problems/embedded/E038_memory_pool_fixed_block/solution.c)

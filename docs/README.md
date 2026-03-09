@@ -267,7 +267,9 @@ The deep logic that decides "Who runs?" and "Where is data stored?".
 | 105 | **Descriptor Chains** | Scatter-gather DMA descriptors. |
 | 106 | **Interrupt Moderation** | NAPI-style polling/interrupt hybrid. |
 
-## Embedded DevEnv (JD Alignment Pack)
+## Embedded DevEnv 
 - **[Embedded DevEnv Overview](embedded_devenv.md)**
 - **[Embedded DevEnv Topic Index (15 topics)](embedded_devenv_index.md)**
+- **[Embedded E Implementation Index](embedded_problem_impl_index.md)**
+- **[Embedded DevEnv Implementation Index](embedded_devenv_impl_index.md)**
 

@@ -34,3 +34,6 @@
 
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
+
+## Reference Implementation
+- C source: [../../problems/embedded/E004_register_bit_manipulation/solution.c](../../problems/embedded/E004_register_bit_manipulation/solution.c)

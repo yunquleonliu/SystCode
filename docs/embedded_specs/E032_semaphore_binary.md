@@ -34,3 +34,6 @@
 
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
+
+## Reference Implementation
+- C source: [../../problems/embedded/E032_semaphore_binary/solution.c](../../problems/embedded/E032_semaphore_binary/solution.c)

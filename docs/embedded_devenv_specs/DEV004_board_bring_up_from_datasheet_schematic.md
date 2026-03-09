@@ -24,3 +24,6 @@
 ## Tooling & Process
 - Git workflow, code review expectations, and issue tracking references.
 - Scripts/log capture format for repeatable validation.
+
+## Reference Implementation
+- C source: [../../problems/embedded_devenv/DEV004_board_bring_up_from_datasheet_schematic/solution.c](../../problems/embedded_devenv/DEV004_board_bring_up_from_datasheet_schematic/solution.c)

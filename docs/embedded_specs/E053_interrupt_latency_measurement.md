@@ -34,3 +34,6 @@
 
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
+
+## Reference Implementation
+- C source: [../../problems/embedded/E053_interrupt_latency_measurement/solution.c](../../problems/embedded/E053_interrupt_latency_measurement/solution.c)

@@ -34,3 +34,6 @@
 
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
+
+## Reference Implementation
+- C source: [../../problems/embedded/E093_digital_filter_fir_iir/solution.c](../../problems/embedded/E093_digital_filter_fir_iir/solution.c)

@@ -34,3 +34,6 @@
 
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
+
+## Reference Implementation
+- C source: [../../problems/embedded/E009_function_call_conventions_abi/solution.c](../../problems/embedded/E009_function_call_conventions_abi/solution.c)

@@ -34,3 +34,6 @@
 
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
+
+## Reference Implementation
+- C source: [../../problems/embedded/E080_bluetooth_le_beacon/solution.c](../../problems/embedded/E080_bluetooth_le_beacon/solution.c)

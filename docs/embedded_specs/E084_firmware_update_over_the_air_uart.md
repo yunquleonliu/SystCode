@@ -34,3 +34,6 @@
 
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
+
+## Reference Implementation
+- C source: [../../problems/embedded/E084_firmware_update_over_the_air_uart/solution.c](../../problems/embedded/E084_firmware_update_over_the_air_uart/solution.c)

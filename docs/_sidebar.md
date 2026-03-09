@@ -133,11 +133,13 @@
 - **Embedded Software 101 (Docs First)**
   - [Embedded Roadmap](embedded_software_roadmap.md)
   - [Embedded Specs Index](embedded_specs_index.md)
+  - [Embedded E Impl Index](embedded_problem_impl_index.md)
   - [Problem Spec Template](embedded_problem_template.md)
   - [E001 CRT0](embedded_01_crt0.md)
   - [E044 Reentrancy Lab](embedded_reentrancy_lab.md)
   - [E103 SmartNIC Initialization](embedded_smartnic_init.md)
 
-- **Embedded DevEnv (JD Alignment)**
+- **Embedded DevEnv **
   - [DevEnv Overview](embedded_devenv.md)
   - [DevEnv Topic Index](embedded_devenv_index.md)
+  - [DevEnv Impl Index](embedded_devenv_impl_index.md)

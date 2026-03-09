@@ -24,3 +24,6 @@
 ## Tooling & Process
 - Git workflow, code review expectations, and issue tracking references.
 - Scripts/log capture format for repeatable validation.
+
+## Reference Implementation
+- C source: [../../problems/embedded_devenv/DEV003_slim_bootloader_integration_intel/solution.c](../../problems/embedded_devenv/DEV003_slim_bootloader_integration_intel/solution.c)

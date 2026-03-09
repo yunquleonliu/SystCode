@@ -34,3 +34,6 @@
 
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
+
+## Reference Implementation
+- C source: [../../problems/embedded/E039_worker_bottom_half_threads/solution.c](../../problems/embedded/E039_worker_bottom_half_threads/solution.c)

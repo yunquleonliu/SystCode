@@ -34,3 +34,6 @@
 
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
+
+## Reference Implementation
+- C source: [../../problems/embedded/E034_mutex_with_priority_inheritance/solution.c](../../problems/embedded/E034_mutex_with_priority_inheritance/solution.c)
