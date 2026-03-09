@@ -220,3 +220,50 @@ The deep logic that decides "Who runs?" and "Where is data stored?".
 | # | Problem | Concept | Difficulty |
 |---|---|---|---|
 | 101 | Build Your Own Shell | fork/exec, Pipes, Signal Handling, Job Control | Expert |
+
+---
+
+# Part II: Embedded Software & RTOS 101
+
+> **[View Full Detailed Roadmap Here](docs/embedded_software_roadmap.md)**
+
+## Module 1: Bare Metal Essentials
+| # | Problem | Description |
+|---|---|---|
+| E01 | **[C Runtime Initialization (CRT0)](docs/embedded_01_crt0.md)** | Initialize .bss/.data segments before main(). |
+| E02 | **Linker Script Basics** | Place code in Flash and data in RAM. |
+| E03 | **Memory Map Layout** | Define stack, heap, and shared memory regions. |
+| E04 | **Register Bit Manipulation** | Type-safe register abstraction (volatile/bit-fields). |
+| E05 | **Inline Assembly** | Use `NOP`, `WFI`, or specialized instructions. |
+| E09 | **Function ABI Parser** | Manual stack frame parsing. |
+| E10 | **Vector Table Setup** | Interrupt vector table relocation. |
+
+## Module 2: Driver Development
+| # | Problem | Description |
+|---|---|---|
+| E11 | **GPIO Driver** | Generic input/output driver. |
+| E12 | **UART Polling** | Blocking serial transmission. |
+| E13 | **UART Ring Buffer** | Interrupt-based circular buffer. |
+| E17 | **I2C Bit-Banging** | Software implementation of I2C. |
+| E21 | **ADC DMA Transfer** | Direct Memory Access for sensor data. |
+
+## Module 3 & 4: RTOS & Concurrency
+| # | Problem | Description |
+|---|---|---|
+| E26 | **Cooperative Scheduler** | simple run-to-completion scheduler. |
+| E29 | **Context Switch** | Save/Restore CPU registers (Assembly). |
+| E44 | **[Reentrancy Lab (The Gauntlet)](docs/embedded_reentrancy_lab.md)** | Fix race conditions in a driver under preemption. |
+| E45 | **Critical Sections** | `ENTER_CRITICAL` / `EXIT_CRITICAL`. |
+| E52 | **IPC Ring Buffer** | Lock-free communication between cores. |
+
+... *Refer to full roadmap for problems E46-E101*
+
+## Module 10: Special Topic - SmartNIC & High Performance I/O
+| # | Problem | Description |
+|---|---|---|
+| 102 | **PCIe Enumeration** | Scan PCI bus and map BARs. |
+| 103 | **[SmartNIC Initialization](docs/embedded_smartnic_init.md)** | Admin Queue / Mailbox handshake. |
+| 104 | **Ring Doorbell** | MMIO producer index updates. |
+| 105 | **Descriptor Chains** | Scatter-gather DMA descriptors. |
+| 106 | **Interrupt Moderation** | NAPI-style polling/interrupt hybrid. |
+
