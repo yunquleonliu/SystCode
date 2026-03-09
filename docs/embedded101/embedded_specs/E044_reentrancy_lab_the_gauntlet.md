@@ -39,4 +39,4 @@
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
 
 ## Reference Implementation
-- C source: [../../problems/embedded101/embedded/E044_reentrancy_lab_the_gauntlet/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/embedded/E044_reentrancy_lab_the_gauntlet/solution.c)
+- C source: [../../problems/embedded101/E044_reentrancy_lab_the_gauntlet/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E044_reentrancy_lab_the_gauntlet/solution.c)

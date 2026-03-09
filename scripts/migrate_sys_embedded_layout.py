@@ -1,4 +1,4 @@
-﻿from pathlib import Path
+from pathlib import Path
 import shutil
 import re
 
@@ -150,7 +150,7 @@ Dedicated Embedded track with specs, DevEnv topics, and implementations.
 # Rewrite embedded spec links to new problem folder location
 for spec in (emb_docs / "embedded_specs").glob("E*.md"):
     content = spec.read_text(encoding="utf-8")
-    content = content.replace("../../problems/embedded/", "../../problems/embedded101/embedded/")
+    content = content.replace("../../problems/embedded/", "../../problems/embedded101/")
     spec.write_text(content, encoding="utf-8")
 
 for spec in (emb_docs / "embedded_devenv_specs").glob("DEV*.md"):
@@ -162,7 +162,7 @@ for spec in (emb_docs / "embedded_devenv_specs").glob("DEV*.md"):
 impl_idx = emb_docs / "embedded_problem_impl_index.md"
 if impl_idx.exists():
     content = impl_idx.read_text(encoding="utf-8")
-    content = content.replace("../problems/embedded/", "../problems/embedded101/embedded/")
+    content = content.replace("../problems/embedded/", "../problems/embedded101/")
     impl_idx.write_text(content, encoding="utf-8")
 
 dev_impl_idx = emb_docs / "embedded_devenv_impl_index.md"

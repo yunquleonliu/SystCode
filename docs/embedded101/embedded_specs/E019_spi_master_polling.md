@@ -36,4 +36,4 @@
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
 
 ## Reference Implementation
-- C source: [../../problems/embedded101/embedded/E019_spi_master_polling/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/embedded/E019_spi_master_polling/solution.c)
+- C source: [../../problems/embedded101/E019_spi_master_polling/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E019_spi_master_polling/solution.c)

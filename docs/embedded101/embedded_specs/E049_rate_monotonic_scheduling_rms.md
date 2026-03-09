@@ -36,4 +36,4 @@
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
 
 ## Reference Implementation
-- C source: [../../problems/embedded101/embedded/E049_rate_monotonic_scheduling_rms/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/embedded/E049_rate_monotonic_scheduling_rms/solution.c)
+- C source: [../../problems/embedded101/E049_rate_monotonic_scheduling_rms/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E049_rate_monotonic_scheduling_rms/solution.c)

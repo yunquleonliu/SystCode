@@ -36,4 +36,4 @@
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
 
 ## Reference Implementation
-- C source: [../../problems/embedded101/embedded/E095_sensor_fusion_complementary_filter/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/embedded/E095_sensor_fusion_complementary_filter/solution.c)
+- C source: [../../problems/embedded101/E095_sensor_fusion_complementary_filter/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E095_sensor_fusion_complementary_filter/solution.c)

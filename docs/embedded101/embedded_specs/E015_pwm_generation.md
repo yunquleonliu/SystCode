@@ -36,4 +36,4 @@
 - Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
 
 ## Reference Implementation
-- C source: [../../problems/embedded101/embedded/E015_pwm_generation/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/embedded/E015_pwm_generation/solution.c)
+- C source: [../../problems/embedded101/E015_pwm_generation/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E015_pwm_generation/solution.c)
