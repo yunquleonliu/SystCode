@@ -2,7 +2,7 @@
 import re
 
 root = Path(__file__).resolve().parents[1]
-docs = root / "docs"
+docs = root / "docs" / "embedded101"
 out_dir = docs / "embedded_devenv_specs"
 out_dir.mkdir(parents=True, exist_ok=True)
 

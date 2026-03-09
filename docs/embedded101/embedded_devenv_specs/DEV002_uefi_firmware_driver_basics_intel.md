@@ -1,0 +1,29 @@
+# DEV002: UEFI Firmware Driver Basics (Intel)
+
+## Objective
+- Create a minimal UEFI driver/application and validate PEI/DXE phase interactions and protocol discovery.
+
+## Why It Matters
+- Aligns with real embedded product development and maintenance expectations.
+
+## Requirements
+- Define platform assumptions (Intel/ARM/Power, RTOS/OS, board constraints).
+- Define interfaces, expected artifacts, and pass/fail criteria.
+- Document debug and validation steps.
+
+## Deliverables
+- Design notes and architecture decisions.
+- Implementation checklist and verification evidence.
+- Review notes (design/code/test).
+
+## Test & Validation
+1. Functional validation path.
+2. Failure-mode and troubleshooting path.
+3. Regression and maintainability checks.
+
+## Tooling & Process
+- Git workflow, code review expectations, and issue tracking references.
+- Scripts/log capture format for repeatable validation.
+
+## Reference Implementation
+- C source: [../../problems/embedded101/embedded_devenv/DEV002_uefi_firmware_driver_basics_intel/solution.c](../../problems/embedded101/embedded_devenv/DEV002_uefi_firmware_driver_basics_intel/solution.c)

@@ -2,9 +2,9 @@
 import re
 
 root = Path(__file__).resolve().parents[1]
-roadmap = root / "docs" / "embedded_software_roadmap.md"
-spec_dir = root / "docs" / "embedded_specs"
-index_file = root / "docs" / "embedded_specs_index.md"
+roadmap = root / "docs" / "embedded101" / "embedded_software_roadmap.md"
+spec_dir = root / "docs" / "embedded101" / "embedded_specs"
+index_file = root / "docs" / "embedded101" / "embedded_specs_index.md"
 
 spec_dir.mkdir(parents=True, exist_ok=True)
 

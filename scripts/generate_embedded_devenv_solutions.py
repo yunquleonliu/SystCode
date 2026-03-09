@@ -2,8 +2,8 @@
 import re
 
 root = Path(__file__).resolve().parents[1]
-docs_specs = root / "docs" / "embedded_devenv_specs"
-problems_root = root / "problems" / "embedded_devenv"
+docs_specs = root / "docs" / "embedded101" / "embedded_devenv_specs"
+problems_root = root / "problems" / "embedded101" / "embedded_devenv"
 problems_root.mkdir(parents=True, exist_ok=True)
 
 spec_files = sorted(docs_specs.glob("DEV*.md"))
@@ -59,7 +59,7 @@ for spec in spec_files:
 
     spec.write_text(content, encoding="utf-8")
 
-(root / "docs" / "embedded_devenv_impl_index.md").write_text(
+(root / "docs" / "embedded101" / "embedded_devenv_impl_index.md").write_text(
     "\n".join(impl_index_lines) + "\n",
     encoding="utf-8",
 )
