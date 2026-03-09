@@ -5,6 +5,7 @@ This is the **docs-first** tracker for Embedded Software topics. We complete spe
 ## Source of Truth
 - Full topic list and descriptions: [embedded_software_roadmap.md](embedded_software_roadmap.md)
 - Spec template: [embedded_problem_template.md](embedded_problem_template.md)
+- Embedded DevEnv track: [embedded_devenv_index.md](embedded_devenv_index.md)
 
 ## Coverage Matrix (E001-E106)
 | ID | Topic | Spec | Status |
@@ -122,3 +123,6 @@ This is the **docs-first** tracker for Embedded Software topics. We complete spe
 - Reentrancy/concurrency constraints are explicit (Task/ISR/SoftIRQ/SMP).
 - Determinism and timing acceptance criteria are measurable.
 - Test plan includes stress + fault cases.
+
+## JD Alignment Extension
+- Practical firmware ecosystem and tooling topics are tracked in [embedded_devenv.md](embedded_devenv.md) and [embedded_devenv_index.md](embedded_devenv_index.md).

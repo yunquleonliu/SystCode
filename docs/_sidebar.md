@@ -137,3 +137,7 @@
   - [E001 CRT0](embedded_01_crt0.md)
   - [E044 Reentrancy Lab](embedded_reentrancy_lab.md)
   - [E103 SmartNIC Initialization](embedded_smartnic_init.md)
+
+- **Embedded DevEnv (JD Alignment)**
+  - [DevEnv Overview](embedded_devenv.md)
+  - [DevEnv Topic Index](embedded_devenv_index.md)
