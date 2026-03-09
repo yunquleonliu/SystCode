@@ -33,10 +33,10 @@
 3. Fault-injection test (timeouts, invalid input, resource exhaustion).
 
 ## Existing Detailed Draft
-- See [CRT0 detailed problem](../embedded_01_crt0.md).
+- See [CRT0 detailed problem](/embedded101/embedded_01_crt0.md).
 
 ## Notes
-- Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
+- Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
 ## Reference Implementation
 - C source: [../../problems/embedded101/E001_c_runtime_initialization_crt0/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E001_c_runtime_initialization_crt0/solution.c)

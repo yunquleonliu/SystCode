@@ -33,7 +33,7 @@
 3. Fault-injection test (timeouts, invalid input, resource exhaustion).
 
 ## Notes
-- Related roadmap item: [embedded_software_roadmap.md](../embedded_software_roadmap.md)
+- Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
 ## Reference Implementation
 - C source: [../../problems/embedded101/E025_lcd_oled_driver/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E025_lcd_oled_driver/solution.c)
