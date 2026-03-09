@@ -17,6 +17,40 @@
 - Output:
 - Error Handling:
 
+## Tutorial Walkthrough
+
+### 1) Build a mental model first
+- Think of **C Runtime Initialization (CRT0)** as a system behavior problem before it is a coding problem.
+- Clarify what is on the critical path: latency, determinism, memory footprint, and failure boundaries.
+- Identify where this feature sits in the stack (driver/RTOS/core library/protocol path).
+
+### 2) Implement in learning layers
+- Start with a minimal correct version that is easy to reason about.
+- Add correctness guards and edge-case handling.
+- Add context-safety constraints (Task/ISR/SMP) explicitly.
+- Finally optimize hot paths only after behavior is verified.
+
+### 3) Validate like a firmware engineer
+- Functional vectors: nominal + edge + invalid input behavior.
+- Concurrency vectors: preemption windows, ISR/task overlap, lock usage correctness.
+- Timing vectors: worst-case path and jitter-sensitive scenarios.
+
+### 4) Readability and maintainability rules
+- Keep API contracts explicit and side effects obvious.
+- Avoid hidden global mutable state unless synchronization is documented.
+- Prefer compiler intrinsics/standard primitives over fragile low-level tricks when equivalent.
+
+## Common Mistakes
+- Mixing correctness logic and optimization logic too early.
+- Ignoring undefined behavior or architecture-specific corner cases.
+- Assuming single-context execution in code that can run in ISR or SMP environment.
+- Not defining observable acceptance criteria (what success looks like in tests/metrics).
+
+## Reader Exercises (Optional)
+1. Write one failing test first, then implement the minimum fix.
+2. Add one performance-oriented variant and compare behavior + complexity.
+3. Add one robustness hardening check and document the tradeoff.
+
 ## Reentrancy & Concurrency Notes
 - Calling contexts: Task / ISR / SoftIRQ / SMP core (as applicable).
 - Shared-state policy: no hidden mutable global state without explicit sync.
