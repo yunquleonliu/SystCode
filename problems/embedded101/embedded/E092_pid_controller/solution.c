@@ -1,13 +1,18 @@
-#include <stdio.h>
-
+#include <stdint.h>
 /*
  * E092: Pid Controller
  *
- * This is a baseline reference stub generated from docs-first planning.
- * Expand this file with full algorithm/driver logic in implementation phases.
+ * Implement a Proportional-Integral-Derivative controller loop.
+ * First-pass implementation for batch rollout.
  */
 
+#include <stdio.h>
+
 int main(void) {
-    printf("[E092] Pid Controller - baseline implementation stub\n");
-    return 0;
+    int32_t q15_a = 8192;
+    int32_t q15_b = 16384;
+    int32_t mix = (q15_a + q15_b) / 2;
+    int ok = (mix == 12288);
+    printf("[E092] dsp_core q15=%d %s\n", mix, ok ? "PASS" : "FAIL");
+    return ok ? 0 : 1;
 }

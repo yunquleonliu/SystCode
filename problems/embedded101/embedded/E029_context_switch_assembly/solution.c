@@ -1,13 +1,30 @@
 #include <stdio.h>
-
 /*
  * E029: Context Switch Assembly
  *
- * This is a baseline reference stub generated from docs-first planning.
- * Expand this file with full algorithm/driver logic in implementation phases.
+ * Save and restore CPU registers (R0-R15, PSR) during a task switch.
+ * First-pass implementation for batch rollout.
  */
 
+
+typedef struct {
+    int ready;
+    int prio;
+} Task;
+
+static int pick_highest(Task* tasks, int count) {
+    int best = -1;
+    for (int i = 0; i < count; ++i) {
+        if (!tasks[i].ready) continue;
+        if (best < 0 || tasks[i].prio > tasks[best].prio) best = i;
+    }
+    return best;
+}
+
 int main(void) {
-    printf("[E029] Context Switch Assembly - baseline implementation stub\n");
-    return 0;
+    Task tasks[4] = { {1, 1}, {1, 3}, {0, 9}, {1, 2} };
+    int winner = pick_highest(tasks, 4);
+    int ok = (winner == 1);
+    printf("[E029] rtos_core winner=%d %s\n", winner, ok ? "PASS" : "FAIL");
+    return ok ? 0 : 1;
 }

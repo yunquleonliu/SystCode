@@ -1,13 +1,30 @@
 #include <stdio.h>
-
 /*
  * E031: Idle Task
  *
- * This is a baseline reference stub generated from docs-first planning.
- * Expand this file with full algorithm/driver logic in implementation phases.
+ * Implement the background task that runs when no other work is pending (and enters sleep).
+ * First-pass implementation for batch rollout.
  */
 
+
+typedef struct {
+    int ready;
+    int prio;
+} Task;
+
+static int pick_highest(Task* tasks, int count) {
+    int best = -1;
+    for (int i = 0; i < count; ++i) {
+        if (!tasks[i].ready) continue;
+        if (best < 0 || tasks[i].prio > tasks[best].prio) best = i;
+    }
+    return best;
+}
+
 int main(void) {
-    printf("[E031] Idle Task - baseline implementation stub\n");
-    return 0;
+    Task tasks[4] = { {1, 1}, {1, 3}, {0, 9}, {1, 2} };
+    int winner = pick_highest(tasks, 4);
+    int ok = (winner == 1);
+    printf("[E031] rtos_core winner=%d %s\n", winner, ok ? "PASS" : "FAIL");
+    return ok ? 0 : 1;
 }

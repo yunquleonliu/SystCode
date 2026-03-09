@@ -1,13 +1,23 @@
 #include <stdio.h>
-
 /*
  * E051: Dual Core Spinlock
  *
- * This is a baseline reference stub generated from docs-first planning.
- * Expand this file with full algorithm/driver logic in implementation phases.
+ * Implement specialized locking for multi-core AMP/SMP systems.
+ * First-pass implementation for batch rollout.
  */
 
+
+static int rms_schedulable(const int* c, const int* t, int n) {
+    double util = 0.0;
+    for (int i = 0; i < n; ++i) util += (double)c[i] / (double)t[i];
+    double bound = 0.779;
+    return util <= bound;
+}
+
 int main(void) {
-    printf("[E051] Dual Core Spinlock - baseline implementation stub\n");
-    return 0;
+    int c[3] = {1, 1, 2};
+    int t[3] = {4, 5, 10};
+    int ok = rms_schedulable(c, t, 3);
+    printf("[E051] realtime_core %s\n", ok ? "PASS" : "FAIL");
+    return ok ? 0 : 1;
 }

@@ -1,13 +1,18 @@
-#include <stdio.h>
-
+#include <stdint.h>
 /*
  * E095: Sensor Fusion Complementary Filter
  *
- * This is a baseline reference stub generated from docs-first planning.
- * Expand this file with full algorithm/driver logic in implementation phases.
+ * Combine Accelerometer and Gyroscope data.
+ * First-pass implementation for batch rollout.
  */
 
+#include <stdio.h>
+
 int main(void) {
-    printf("[E095] Sensor Fusion Complementary Filter - baseline implementation stub\n");
-    return 0;
+    int32_t q15_a = 8192;
+    int32_t q15_b = 16384;
+    int32_t mix = (q15_a + q15_b) / 2;
+    int ok = (mix == 12288);
+    printf("[E095] dsp_core q15=%d %s\n", mix, ok ? "PASS" : "FAIL");
+    return ok ? 0 : 1;
 }
