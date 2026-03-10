@@ -19,7 +19,12 @@ Probabilistic data structure to test set membership efficiently.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Bloom Filter
+state = init_bloom_filter()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

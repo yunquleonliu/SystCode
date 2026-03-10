@@ -19,7 +19,12 @@ Demonstrate performance drop when threads write to same cache line strings.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for False Sharing Demo
+state = init_false_sharing_demo()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

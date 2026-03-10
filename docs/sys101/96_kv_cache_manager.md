@@ -19,7 +19,12 @@ Manage the Key-Value memory cache for Transformer decoding.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for KV Cache Manager
+state = init_kv_cache_manager()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

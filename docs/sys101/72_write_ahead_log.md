@@ -19,7 +19,12 @@ Implement crash recovery storage ensuring Atomicity.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for WAL (Write Ahead Log)
+state = init_wal_write_ahead_log()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

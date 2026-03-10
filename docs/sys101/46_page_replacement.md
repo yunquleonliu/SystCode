@@ -19,7 +19,12 @@ Simulate 'second chance' Clock algorithm for page swapping.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Page Replacement (Clock/LRU)
+state = init_page_replacement_clock_lru()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

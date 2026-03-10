@@ -19,7 +19,12 @@ Implement a log-structured hash table (append-only file + in-mem map).
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Bitcask (Key-Value)
+state = init_bitcask_key_value()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

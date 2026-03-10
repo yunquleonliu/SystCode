@@ -19,7 +19,12 @@ Simulate Top-Half (ISR) and Bottom-Half (Deferred) work processing.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Interrupt Handler Simulator
+state = init_interrupt_handler_simulator()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

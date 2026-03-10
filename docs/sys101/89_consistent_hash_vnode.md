@@ -19,7 +19,12 @@ Enhance consistent hashing with Virtual Nodes for load balance.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Consistent Hash Ring (VNode)
+state = init_consistent_hash_ring_vnode()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

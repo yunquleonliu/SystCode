@@ -19,7 +19,12 @@ Simulate consistency lag between regions (Quorum logic).
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Geo-Replication Latency
+state = init_geo_replication_latency()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

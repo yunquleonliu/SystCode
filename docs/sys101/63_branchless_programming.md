@@ -19,7 +19,12 @@ Remove 'if' statements from critical loops using strict arithmetic.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Branchless Logic
+state = init_branchless_logic()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

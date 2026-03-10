@@ -19,7 +19,12 @@ Simple cost estimation between Index Scan vs Seq Scan.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Query Optimizer (Cost)
+state = init_query_optimizer_cost()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

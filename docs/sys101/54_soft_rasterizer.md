@@ -19,7 +19,12 @@ Implement the triangle-to-pixel pipeline (Barycentric coordinates).
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Soft Rasterizer (GPU)
+state = init_soft_rasterizer_gpu()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

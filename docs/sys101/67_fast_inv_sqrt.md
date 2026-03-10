@@ -19,7 +19,12 @@ Implement the famous Quake III algorithm (bit hacking float).
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Fast Inverse Square Root
+state = init_fast_inverse_square_root()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

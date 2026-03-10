@@ -19,7 +19,12 @@ Implement the self-attention score calculation (Q * K^T).
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Attention Mechanism (Softmax)
+state = init_attention_mechanism_softmax()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

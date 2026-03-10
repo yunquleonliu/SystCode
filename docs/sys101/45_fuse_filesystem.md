@@ -19,7 +19,12 @@ Implement a userspace passthrough file system or encrypted layer.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for FUSE File System
+state = init_fuse_file_system()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

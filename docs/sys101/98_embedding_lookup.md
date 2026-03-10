@@ -19,7 +19,12 @@ Efficient gather operations for sparse embedding layers.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Embedding Table Lookup
+state = init_embedding_table_lookup()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

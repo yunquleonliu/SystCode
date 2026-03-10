@@ -19,7 +19,12 @@ Overwrite function prologue to redirect execution to a hook.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Function Hooking (Trampoline)
+state = init_function_hooking_trampoline()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

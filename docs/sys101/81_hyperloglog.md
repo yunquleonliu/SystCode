@@ -19,7 +19,12 @@ Cardinality estimation algorithm for massive data streams.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for HyperLogLog
+state = init_hyperloglog()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

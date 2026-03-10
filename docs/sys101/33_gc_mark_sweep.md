@@ -19,7 +19,12 @@ Implement a conservative Garbage Collector for C scanning the stack.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Mark & Sweep GC
+state = init_mark_sweep_gc()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

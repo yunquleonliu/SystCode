@@ -19,7 +19,12 @@ Simulate reading/writing to hardware control registers using structs.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Memory Mapped Registers
+state = init_memory_mapped_registers()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

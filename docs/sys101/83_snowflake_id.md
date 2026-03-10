@@ -19,7 +19,12 @@ Implement Twitter Snowflake algorithm (Time + Machine + Seq).
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Distributed ID Generator
+state = init_distributed_id_generator()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

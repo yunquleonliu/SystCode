@@ -19,7 +19,12 @@ Simulate the communication pattern for gradient synchronization.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Ring All-Reduce
+state = init_ring_all_reduce()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

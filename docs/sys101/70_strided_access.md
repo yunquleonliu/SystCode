@@ -19,7 +19,12 @@ Demonstrate performance difference between Row-major and Col-major.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Strided Access Pattern
+state = init_strided_access_pattern()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

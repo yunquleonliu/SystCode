@@ -19,7 +19,12 @@ Simulate a Scatter-Gather Direct Memory Access transfer engine.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for DMA Controller Sim
+state = init_dma_controller_sim()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

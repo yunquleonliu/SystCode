@@ -19,7 +19,12 @@ Manage a cache of disk pages in memory with eviction policies.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Buffer Pool Manager
+state = init_buffer_pool_manager()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

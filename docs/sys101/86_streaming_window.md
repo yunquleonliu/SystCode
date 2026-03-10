@@ -19,7 +19,12 @@ Count top-k items in a sliding time window (Space Saving Algo).
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Streaming Window (Count)
+state = init_streaming_window_count()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

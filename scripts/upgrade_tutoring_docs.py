@@ -17,6 +17,12 @@ def extract_title(text: str) -> str:
     return m3.group(1).strip() if m3 else "this topic"
 
 
+def slugify_title(title: str) -> str:
+    s = re.sub(r"[^a-zA-Z0-9]+", "_", title.strip().lower())
+    s = re.sub(r"_+", "_", s).strip("_")
+    return s or "problem"
+
+
 def ensure_embedded_tutoring(path: Path) -> bool:
     text = path.read_text(encoding="utf-8")
 
@@ -73,11 +79,8 @@ def ensure_embedded_tutoring(path: Path) -> bool:
 
 def ensure_sys_tutoring(path: Path) -> bool:
     text = path.read_text(encoding="utf-8")
-
-    if "## Why This Problem Matters" in text:
-        return False
-
     title = extract_title(text)
+    changed = False
 
     block = f"""
 ## Why This Problem Matters
@@ -108,13 +111,34 @@ def ensure_sys_tutoring(path: Path) -> bool:
 3. Document one production-style failure mode and mitigation.
 """
 
-    if "## Solution Summary" in text:
-        text = text.replace("## Solution Summary", block + "\n## Solution Summary", 1)
-    else:
-        text = text.rstrip() + "\n" + block
+    if "## Why This Problem Matters" not in text:
+        if "## Solution Summary" in text:
+            text = text.replace("## Solution Summary", block + "\n## Solution Summary", 1)
+        else:
+            text = text.rstrip() + "\n" + block
+        changed = True
 
-    path.write_text(text, encoding="utf-8")
-    return True
+    placeholder = "// Add high-level logic here"
+    if placeholder in text:
+        fn = slugify_title(title)
+        replacement = (
+            f"// Pseudocode sketch for {title}\n"
+            f"state = init_{fn}()\n"
+            "for event in input_stream:\n"
+            "    state = validate_and_apply(state, event)\n"
+            "    emit_if_needed(state)\n"
+            "return finalize(state)"
+        )
+        text = text.replace(placeholder, replacement)
+        changed = True
+
+    if "// Pseudocode sketch for" in text and "\\nstate = init_" in text:
+        text = text.replace("\\n", "\n")
+        changed = True
+
+    if changed:
+        path.write_text(text, encoding="utf-8")
+    return changed
 
 
 def main() -> None:

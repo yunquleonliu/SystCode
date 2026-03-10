@@ -19,7 +19,12 @@ Combine Process APIs, Signals, and Parsing into a working shell.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Build Your Own Shell
+state = init_build_your_own_shell()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

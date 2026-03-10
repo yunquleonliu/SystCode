@@ -19,7 +19,12 @@ Decode quadrature signals from a physical knob (state machine).
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Rotary Encoder Decoder
+state = init_rotary_encoder_decoder()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

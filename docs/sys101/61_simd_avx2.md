@@ -19,7 +19,12 @@ Use intrinsic functions to parallelize 4x4 float multiplication.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for SIMD Matrix Mul (AVX2)
+state = init_simd_matrix_mul_avx2()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

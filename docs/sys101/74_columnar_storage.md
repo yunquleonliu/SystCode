@@ -19,7 +19,12 @@ Simulate a column-oriented layout with Run-Length Encoding.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Columnar Storage (Parquet)
+state = init_columnar_storage_parquet()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

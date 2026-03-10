@@ -19,7 +19,12 @@ Simulate splitting weights across 2 devices (Tensor Parallelism).
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Parameter Sharding
+state = init_parameter_sharding()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

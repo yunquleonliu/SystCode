@@ -19,7 +19,12 @@ Simulate loading a kernel from disk to memory and jumping to entry.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Bootloader Logic
+state = init_bootloader_logic()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

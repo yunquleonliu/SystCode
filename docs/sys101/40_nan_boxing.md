@@ -19,7 +19,12 @@ Implement dynamic typing using IEEE 754 NaN space (like JavaScript engines).
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for NaN Boxing
+state = init_nan_boxing()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

@@ -19,7 +19,12 @@ Implement the standard DBMS page structure for variable length records.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Slotted Page Layout
+state = init_slotted_page_layout()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

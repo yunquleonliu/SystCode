@@ -19,7 +19,12 @@ Implement the Redlock algorithm logic (TTL + Renewal).
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Distributed Lock (Redis)
+state = init_distributed_lock_redis()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

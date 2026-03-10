@@ -19,7 +19,12 @@ Implement the graph traversal layer of HNSW for nearest neighbors.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Vector Search (HNSW)
+state = init_vector_search_hnsw()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

@@ -19,7 +19,12 @@ Manage memory using 2MB/1GB Huge Pages to reduce TLB misses.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Memory Arena (Huge Pages)
+state = init_memory_arena_huge_pages()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

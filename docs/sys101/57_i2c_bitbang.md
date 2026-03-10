@@ -19,7 +19,12 @@ Software implementation of the I2C protocol over GPIO pins.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for I2C Bit-Banging
+state = init_i2c_bit_banging()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

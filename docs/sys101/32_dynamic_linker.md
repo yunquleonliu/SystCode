@@ -19,7 +19,12 @@ Simulate the lazy binding process of shared libraries (PLT/GOT).
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Custom Dynamic Linker
+state = init_custom_dynamic_linker()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

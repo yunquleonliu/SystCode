@@ -19,7 +19,12 @@ Use /dev/kvm API to boot a tiny 16-bit real-mode kernel.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Minimal KVM Hypervisor
+state = init_minimal_kvm_hypervisor()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

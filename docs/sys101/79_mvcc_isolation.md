@@ -19,7 +19,12 @@ Simulate Multiple Version Concurrency Control for transactions.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for MVCC (Snapshot Isolation)
+state = init_mvcc_snapshot_isolation()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

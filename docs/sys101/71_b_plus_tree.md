@@ -19,7 +19,12 @@ Implement insertion and splitting logic for an on-disk B+ Tree.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for B+ Tree Implementation
+state = init_b_tree_implementation()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

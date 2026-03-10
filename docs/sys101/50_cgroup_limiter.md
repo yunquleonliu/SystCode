@@ -19,7 +19,12 @@ Simulate tracking CPU quotas and Memory pages for a process group.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Cgroup Resource Limiter
+state = init_cgroup_resource_limiter()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

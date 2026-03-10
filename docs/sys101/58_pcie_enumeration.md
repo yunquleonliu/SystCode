@@ -19,7 +19,12 @@ Simulate scanning a bus to discover devices and assign BAR addresses.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for PCIe Enumeration
+state = init_pcie_enumeration()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

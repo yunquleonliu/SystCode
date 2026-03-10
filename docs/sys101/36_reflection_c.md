@@ -19,7 +19,12 @@ Use macro magic or DWARF parsing to print struct field names at runtime.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Reflection in C
+state = init_reflection_in_c()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

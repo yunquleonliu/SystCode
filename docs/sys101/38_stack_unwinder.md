@@ -19,7 +19,12 @@ Manually walk the stack frames (RBP chain) to print a backtrace.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Stack Unwinder
+state = init_stack_unwinder()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

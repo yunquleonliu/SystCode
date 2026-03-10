@@ -19,7 +19,12 @@ Implement shadow memory logic to detect out-of-bounds access.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Address Sanitizer (Mini-ASan)
+state = init_address_sanitizer_mini_asan()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

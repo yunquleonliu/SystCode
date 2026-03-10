@@ -19,7 +19,12 @@ Implement a system health monitor that resets if not 'kicked'.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Watchdog Timer
+state = init_watchdog_timer()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

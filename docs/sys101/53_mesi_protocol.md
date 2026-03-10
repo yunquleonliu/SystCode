@@ -19,7 +19,12 @@ Simulate state transitions of Modified, Exclusive, Shared, Invalid cache lines.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Cache Coherency (MESI)
+state = init_cache_coherency_mesi()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

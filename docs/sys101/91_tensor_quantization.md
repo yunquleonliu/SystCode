@@ -19,7 +19,12 @@ Implement quantization logic (Float32 -> Int8) for inference.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Tensor Quantization (Int8)
+state = init_tensor_quantization_int8()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

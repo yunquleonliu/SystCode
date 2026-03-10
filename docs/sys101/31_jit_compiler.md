@@ -19,7 +19,12 @@ Allocate RWX memory, write raw x64 opcodes, and execute function at runtime.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for JIT Compiler (x64)
+state = init_jit_compiler_x64()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

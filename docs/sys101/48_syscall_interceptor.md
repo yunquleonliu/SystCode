@@ -19,7 +19,12 @@ Use ptrace/seccomp to filter system calls for a child process.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for System Call Interceptor
+state = init_system_call_interceptor()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

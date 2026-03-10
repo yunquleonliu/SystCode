@@ -19,7 +19,12 @@ Simulate how a linker resolves strong vs weak symbols across object files.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for Linker Symbol Resolution
+state = init_linker_symbol_resolution()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 

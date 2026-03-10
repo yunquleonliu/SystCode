@@ -19,7 +19,12 @@ Simulate the distributed sort/group phase of MapReduce.
 
 ## Pseudocode Hint
 ```text
-// Add high-level logic here
+// Pseudocode sketch for MapReduce (Shuffle)
+state = init_mapreduce_shuffle()
+for event in input_stream:
+    state = validate_and_apply(state, event)
+    emit_if_needed(state)
+return finalize(state)
 ```
 
 
