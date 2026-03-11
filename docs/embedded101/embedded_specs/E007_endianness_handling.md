@@ -72,5 +72,37 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static int is_little_endian(void) {
+  ```
+- ```c
+  static uint16_t bswap16(uint16_t value) {
+  ```
+- ```c
+  static uint32_t bswap32(uint32_t value) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+uint16_t v16 = 0x1234u;
+uint32_t v32 = 0x89ABCDEFu;
+uint16_t s16 = bswap16(v16);
+uint32_t s32 = bswap32(v32);
+int ok = (s16 == 0x3412u) && (s32 == 0xEFCDAB89u);
+printf("[E007] endian=%s swap=%s\n", is_little_endian() ? "little" : "big", ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E007_endianness_handling/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E007_endianness_handling/solution.c)
+- C source: [../../problems/embedded101/E007_endianness_handling/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E007_endianness_handling/solution.c)

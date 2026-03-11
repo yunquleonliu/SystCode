@@ -72,5 +72,43 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h
+
+**Key Functions**:
+- ```c
+  static void default_handler(void) {
+  ```
+- ```c
+  static void timer_handler(void) {
+  ```
+- ```c
+  static void uart_handler(void) {
+  ```
+- ```c
+  static void vector_invoke(IsrHandler* table, int irq) {
+  ```
+- ```c
+  if (irq >= 0 && irq < VECTOR_COUNT && table[irq] != NULL) {
+  ```
+
+**Test Logic**:
+```c
+for (int index = 0; index < VECTOR_COUNT; ++index) {
+flash_vector[index] = default_handler;
+ram_vector[index] = default_handler;
+flash_vector[3] = timer_handler;
+flash_vector[4] = uart_handler;
+for (int index = 0; index < VECTOR_COUNT; ++index) {
+ram_vector[index] = flash_vector[index];
+vector_invoke(ram_vector, 3);
+vector_invoke(ram_vector, 4);
+vector_invoke(ram_vector, 7);
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E010_vector_table_setup/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E010_vector_table_setup/solution.c)
+- C source: [../../problems/embedded101/E010_vector_table_setup/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E010_vector_table_setup/solution.c)

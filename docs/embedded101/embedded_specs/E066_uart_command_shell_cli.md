@@ -72,5 +72,29 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static uint16_t checksum16(const uint8_t* data, int len) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+uint8_t frame[8] = {0x45, 0x00, 0x00, 0x2C, 0xAA, 0xBB, 0xCC, 0xDD};
+uint16_t cs = checksum16(frame, 8);
+int ok = cs != 0;
+printf("[E066] comms_core csum=0x%04X %s\n", cs, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E066_uart_command_shell_cli/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E066_uart_command_shell_cli/solution.c)
+- C source: [../../problems/embedded101/E066_uart_command_shell_cli/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E066_uart_command_shell_cli/solution.c)

@@ -72,5 +72,33 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h
+
+**Key Functions**:
+- ```c
+  static int ring_push(RingBuffer* ring, char value) {
+  ```
+- ```c
+  static int ring_pop(RingBuffer* ring, char* out) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+RingBuffer rx = {0};
+char a = '\0', b = '\0', c = '\0';
+int ok = ring_pop(&rx, &a) && ring_pop(&rx, &b) && ring_pop(&rx, &c) &&
+a == 'A' && b == 'B' && c == 'C';
+printf("[E013] seq=%c%c%c %s\n", a, b, c, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E013_uart_interrupt_based_ring_buffer/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E013_uart_interrupt_based_ring_buffer/solution.c)
+- C source: [../../problems/embedded101/E013_uart_interrupt_based_ring_buffer/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E013_uart_interrupt_based_ring_buffer/solution.c)

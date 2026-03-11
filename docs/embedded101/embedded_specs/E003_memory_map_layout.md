@@ -72,5 +72,40 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static int overlap(const MemoryRegion* first, const MemoryRegion* second) {
+  ```
+- ```c
+  static int region_alloc(MemoryRegion* region, uint32_t bytes, uint32_t* out_addr) {
+  ```
+- ```c
+  if (region->cursor + bytes > region->start + region->size) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+MemoryRegion stack = {"stack", 0x2001C000u, 0x2000u, 0x2001C000u};
+MemoryRegion heap = {"heap", 0x20010000u, 0xB000u, 0x20010000u};
+MemoryRegion shared = {"shared", 0x2000F000u, 0x1000u, 0x2000F000u};
+int layout_ok = !overlap(&stack, &heap) && !overlap(&stack, &shared) && !overlap(&heap, &shared);
+uint32_t alloc1 = 0;
+uint32_t alloc2 = 0;
+int alloc_ok = region_alloc(&heap, 0x400, &alloc1) && region_alloc(&heap, 0x800, &alloc2);
+printf("[E003] layout=%s alloc=%s first=0x%08X second=0x%08X\n",
+layout_ok ? "PASS" : "FAIL",
+alloc_ok ? "PASS" : "FAIL",
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E003_memory_map_layout/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E003_memory_map_layout/solution.c)
+- C source: [../../problems/embedded101/E003_memory_map_layout/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E003_memory_map_layout/solution.c)

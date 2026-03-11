@@ -72,5 +72,35 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h, stdarg.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static int sum_variadic(int count, ...) {
+  ```
+- ```c
+  for (int index = 0; index < count; ++index) {
+  ```
+- ```c
+  static uintptr_t current_frame(void) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+int total = sum_variadic(5, 1, 2, 3, 4, 5);
+uintptr_t frame = current_frame();
+int ok = (total == 15);
+printf("[E009] variadic_sum=%d frame=0x%zx %s\n", total, (size_t)frame, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E009_function_call_conventions_abi/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E009_function_call_conventions_abi/solution.c)
+- C source: [../../problems/embedded101/E009_function_call_conventions_abi/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E009_function_call_conventions_abi/solution.c)

@@ -72,5 +72,37 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: string.h, stddef.h, stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static void stack_paint(uint8_t* memory, size_t size) {
+  ```
+- ```c
+  static void simulate_stack_usage(uint8_t* memory, size_t size, size_t used) {
+  ```
+- ```c
+  if (used > size) {
+  ```
+- ```c
+  for (size_t index = 0; index < used; ++index) {
+  ```
+- ```c
+  static size_t stack_high_watermark(const uint8_t* memory, size_t size) {
+  ```
+
+**Test Logic**:
+```c
+size_t used = stack_high_watermark(fake_stack, sizeof(fake_stack));
+int ok = (used == 96u);
+printf("[E006] used=%zu bytes %s\n", used, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E006_stack_paint/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E006_stack_paint/solution.c)
+- C source: [../../problems/embedded101/E006_stack_paint/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E006_stack_paint/solution.c)

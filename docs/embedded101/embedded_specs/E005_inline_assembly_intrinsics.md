@@ -111,5 +111,35 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static uint32_t popcount_u32(uint32_t value) {
+  ```
+- ```c
+  while (value != 0u) {
+  ```
+- ```c
+  static void cpu_relax_nop(void) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+uint32_t value = 0xF0F0A50Fu;
+uint32_t count = popcount_u32(value);
+int ok = (count == 16u);
+printf("[E005] popcount=%u %s\n", count, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E005_inline_assembly_intrinsics/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E005_inline_assembly_intrinsics/solution.c)
+- C source: [../../problems/embedded101/E005_inline_assembly_intrinsics/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E005_inline_assembly_intrinsics/solution.c)

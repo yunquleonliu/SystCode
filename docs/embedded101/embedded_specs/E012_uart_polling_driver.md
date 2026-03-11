@@ -72,5 +72,39 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: string.h, stdio.h
+
+**Key Functions**:
+- ```c
+  static void uart_init(Uart* uart) { memset(uart, 0, sizeof(*uart)); }
+  ```
+- ```c
+  static void uart_polling_send(Uart* uart, const char* text) {
+  ```
+- ```c
+  static int uart_polling_recv(Uart* uart, char* out) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+uart.rx_fifo[uart.rx_tail++] = 'O';
+uart.rx_fifo[uart.rx_tail++] = 'K';
+char first = '\0';
+char second = '\0';
+int got1 = uart_polling_recv(&uart, &first);
+int got2 = uart_polling_recv(&uart, &second);
+int ok = (uart.tx_len == 5u) && got1 && got2 && first == 'O' && second == 'K';
+printf("[E012] tx=%.*s rx=%c%c %s\n", (int)uart.tx_len, uart.tx_log, first, second, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E012_uart_polling_driver/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E012_uart_polling_driver/solution.c)
+- C source: [../../problems/embedded101/E012_uart_polling_driver/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E012_uart_polling_driver/solution.c)

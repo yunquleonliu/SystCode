@@ -72,5 +72,28 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h
+
+**Key Functions**:
+- ```c
+  static int run_tests(void) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+int pass = run_tests();
+int ok = (pass == 3);
+printf("[E099] tooling_core tests=%d %s\n", pass, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E099_code_coverage_gcov/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E099_code_coverage_gcov/solution.c)
+- C source: [../../problems/embedded101/E099_code_coverage_gcov/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E099_code_coverage_gcov/solution.c)

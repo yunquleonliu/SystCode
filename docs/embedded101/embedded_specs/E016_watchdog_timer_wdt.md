@@ -72,5 +72,34 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h
+
+**Key Functions**:
+- ```c
+  static void wdt_tick(Watchdog* wdt) {
+  ```
+- ```c
+  if (wdt->counter >= wdt->timeout_ticks) {
+  ```
+- ```c
+  static void wdt_kick(Watchdog* wdt) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+Watchdog wdt = {.timeout_ticks = 4, .counter = 0, .resets = 0};
+int ok = (wdt.resets == 1);
+printf("[E016] resets=%d %s\n", wdt.resets, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E016_watchdog_timer_wdt/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E016_watchdog_timer_wdt/solution.c)
+- C source: [../../problems/embedded101/E016_watchdog_timer_wdt/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E016_watchdog_timer_wdt/solution.c)

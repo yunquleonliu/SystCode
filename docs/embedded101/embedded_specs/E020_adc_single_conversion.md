@@ -72,5 +72,29 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static uint16_t adc_single_conversion(Adc* adc, uint16_t analog_input_mv) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+Adc adc = {0};
+uint16_t sample = adc_single_conversion(&adc, 1650u);
+int ok = (sample >= 2047u && sample <= 2048u);
+printf("[E020] sample=%u %s\n", sample, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E020_adc_single_conversion/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E020_adc_single_conversion/solution.c)
+- C source: [../../problems/embedded101/E020_adc_single_conversion/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E020_adc_single_conversion/solution.c)

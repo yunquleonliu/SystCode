@@ -72,5 +72,37 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static int place_section(const Region* region, uint32_t* cursor, Section* section) {
+  ```
+- ```c
+  if (*cursor + section->size > end) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+Region flash = {"FLASH", 0x08000000u, 256u * 1024u};
+Region ram = {"RAM", 0x20000000u, 64u * 1024u};
+Section text = {".text", 40u * 1024u, 0};
+Section rodata = {".rodata", 8u * 1024u, 0};
+Section data = {".data", 4u * 1024u, 0};
+Section bss = {".bss", 12u * 1024u, 0};
+uint32_t flash_cursor = flash.origin;
+uint32_t ram_cursor = ram.origin;
+int ok = 1;
+ok &= place_section(&flash, &flash_cursor, &text);
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E002_linker_script_basics/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E002_linker_script_basics/solution.c)
+- C source: [../../problems/embedded101/E002_linker_script_basics/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E002_linker_script_basics/solution.c)

@@ -72,5 +72,27 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+uint32_t image_crc = 0xA5A5A5A5u;
+uint32_t stored_crc = 0xA5A5A5A5u;
+int boot_ok = (image_crc == stored_crc);
+int slot = boot_ok ? 1 : 0;
+printf("[E086] bootsec_core slot=%d %s\n", slot, boot_ok ? "PASS" : "FAIL");
+return boot_ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E086_secure_boot_chain_concept/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E086_secure_boot_chain_concept/solution.c)
+- C source: [../../problems/embedded101/E086_secure_boot_chain_concept/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E086_secure_boot_chain_concept/solution.c)

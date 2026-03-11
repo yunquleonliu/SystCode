@@ -72,5 +72,35 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static void timer_tick(Timer* timer) {
+  ```
+- ```c
+  if (timer->counter >= timer->period) {
+  ```
+- ```c
+  int main(void) {
+  ```
+- ```c
+  for (int index = 0; index < 23; ++index) {
+  ```
+
+**Test Logic**:
+```c
+Timer timer = {.counter = 0, .period = 5, .events = 0};
+for (int index = 0; index < 23; ++index) {
+int ok = (timer.events == 4u) && (timer.counter == 3u);
+printf("[E014] events=%u counter=%u %s\n", timer.events, timer.counter, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E014_simple_timer_counter/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E014_simple_timer_counter/solution.c)
+- C source: [../../problems/embedded101/E014_simple_timer_counter/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E014_simple_timer_counter/solution.c)

@@ -72,5 +72,32 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h
+
+**Key Functions**:
+- ```c
+  static int pick_highest(Task* tasks, int count) {
+  ```
+- ```c
+  for (int i = 0; i < count; ++i) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+Task tasks[4] = { {1, 1}, {1, 3}, {0, 9}, {1, 2} };
+int winner = pick_highest(tasks, 4);
+int ok = (winner == 1);
+printf("[E026] rtos_core winner=%d %s\n", winner, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E026_cooperative_scheduler/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E026_cooperative_scheduler/solution.c)
+- C source: [../../problems/embedded101/E026_cooperative_scheduler/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E026_cooperative_scheduler/solution.c)

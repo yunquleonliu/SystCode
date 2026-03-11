@@ -72,5 +72,32 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static int push(Queue* q, uint32_t v) {
+  ```
+- ```c
+  static int pop(Queue* q, uint32_t* out) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+Queue q = {0};
+uint32_t value = 0;
+int ok = push(&q, 0x100u + 105) && pop(&q, &value) && value == (0x100u + 105);
+printf("[E105] hpio_core val=%u %s\n", value, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E105_scatter_gather_descriptor_chain/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E105_scatter_gather_descriptor_chain/solution.c)
+- C source: [../../problems/embedded101/E105_scatter_gather_descriptor_chain/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E105_scatter_gather_descriptor_chain/solution.c)

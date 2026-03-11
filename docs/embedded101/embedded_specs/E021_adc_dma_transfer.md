@@ -72,5 +72,31 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static uint32_t hash_u32(uint32_t value) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+uint32_t nodes[4] = {11u, 29u, 47u, 61u};
+uint32_t key = hash_u32(0x015u);
+uint32_t idx = key % 4u;
+uint32_t selected = nodes[idx];
+int ok = selected == nodes[idx];
+printf("[E021] dist_core key=%u node=%u %s\n", key, selected, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E021_adc_dma_transfer/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E021_adc_dma_transfer/solution.c)
+- C source: [../../problems/embedded101/E021_adc_dma_transfer/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E021_adc_dma_transfer/solution.c)

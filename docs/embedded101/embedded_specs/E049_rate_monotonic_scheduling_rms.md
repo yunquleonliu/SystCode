@@ -72,5 +72,29 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h
+
+**Key Functions**:
+- ```c
+  static int rms_schedulable(const int* c, const int* t, int n) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+int c[3] = {1, 1, 2};
+int t[3] = {4, 5, 10};
+int ok = rms_schedulable(c, t, 3);
+printf("[E049] realtime_core %s\n", ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E049_rate_monotonic_scheduling_rms/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E049_rate_monotonic_scheduling_rms/solution.c)
+- C source: [../../problems/embedded101/E049_rate_monotonic_scheduling_rms/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E049_rate_monotonic_scheduling_rms/solution.c)

@@ -72,5 +72,37 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h
+
+**Key Functions**:
+- ```c
+  static void set_scl(I2CBus* bus, int level) {
+  ```
+- ```c
+  static void set_sda(I2CBus* bus, int level) {
+  ```
+- ```c
+  static void i2c_start(I2CBus* bus) {
+  ```
+- ```c
+  static void i2c_stop(I2CBus* bus) {
+  ```
+- ```c
+  static void i2c_write_byte(I2CBus* bus, unsigned value) {
+  ```
+
+**Test Logic**:
+```c
+I2CBus bus = {.scl = 1, .sda = 1, .transitions = 0};
+int ok = (bus.scl == 1) && (bus.sda == 1) && (bus.transitions > 20);
+printf("[E017] transitions=%d %s\n", bus.transitions, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E017_i2c_bit_banging/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E017_i2c_bit_banging/solution.c)
+- C source: [../../problems/embedded101/E017_i2c_bit_banging/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E017_i2c_bit_banging/solution.c)

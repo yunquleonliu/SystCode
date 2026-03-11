@@ -72,5 +72,35 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h
+
+**Key Functions**:
+- ```c
+  static int pwm_level(const PwmConfig* config, int tick) {
+  ```
+- ```c
+  int main(void) {
+  ```
+- ```c
+  for (int tick = 0; tick < pwm.period_ticks; ++tick) {
+  ```
+
+**Test Logic**:
+```c
+PwmConfig pwm = {.period_ticks = 20, .high_ticks = 7};
+int high = 0;
+for (int tick = 0; tick < pwm.period_ticks; ++tick) {
+high += pwm_level(&pwm, tick);
+int duty = (high * 100) / pwm.period_ticks;
+int ok = (duty == 35);
+printf("[E015] duty=%d%% %s\n", duty, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E015_pwm_generation/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E015_pwm_generation/solution.c)
+- C source: [../../problems/embedded101/E015_pwm_generation/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E015_pwm_generation/solution.c)

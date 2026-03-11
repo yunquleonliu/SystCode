@@ -72,5 +72,27 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+int32_t q15_a = 8192;
+int32_t q15_b = 16384;
+int32_t mix = (q15_a + q15_b) / 2;
+int ok = (mix == 12288);
+printf("[E092] dsp_core q15=%d %s\n", mix, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E092_pid_controller/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E092_pid_controller/solution.c)
+- C source: [../../problems/embedded101/E092_pid_controller/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E092_pid_controller/solution.c)

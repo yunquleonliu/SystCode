@@ -72,5 +72,33 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: string.h, stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static uint32_t read_u32_unaligned(const void* ptr) {
+  ```
+- ```c
+  static void write_u32_unaligned(void* ptr, uint32_t value) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+uint8_t buffer[16] = {0};
+void* misaligned = &buffer[1];
+uint32_t value = read_u32_unaligned(misaligned);
+int ok = (value == 0xDEADBEEFu);
+printf("[E008] value=0x%08X %s\n", value, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E008_unaligned_access_handling/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E008_unaligned_access_handling/solution.c)
+- C source: [../../problems/embedded101/E008_unaligned_access_handling/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E008_unaligned_access_handling/solution.c)

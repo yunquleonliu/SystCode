@@ -72,5 +72,25 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: string.h, stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+const char* msg = "E064";
+int ok = memcmp(&flash[32], msg, 4) == 0;
+printf("[E064] storage_core %s\n", ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E064_heap_fragmentation_analysis/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E064_heap_fragmentation_analysis/solution.c)
+- C source: [../../problems/embedded101/E064_heap_fragmentation_analysis/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E064_heap_fragmentation_analysis/solution.c)

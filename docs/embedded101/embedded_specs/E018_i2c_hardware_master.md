@@ -72,5 +72,33 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static void i2c_hw_write_reg(Sensor* sensor, uint8_t reg, uint8_t value) {
+  ```
+- ```c
+  static uint8_t i2c_hw_read_reg(const Sensor* sensor, uint8_t reg) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+Sensor sensor = {0};
+uint8_t a = i2c_hw_read_reg(&sensor, 0x10u);
+uint8_t b = i2c_hw_read_reg(&sensor, 0x11u);
+int ok = (a == 0x3Cu) && (b == 0x7Au);
+printf("[E018] reg10=0x%02X reg11=0x%02X %s\n", a, b, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E018_i2c_hardware_master/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E018_i2c_hardware_master/solution.c)
+- C source: [../../problems/embedded101/E018_i2c_hardware_master/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E018_i2c_hardware_master/solution.c)

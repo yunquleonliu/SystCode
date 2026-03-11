@@ -72,5 +72,38 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static void gpio_set_output(Gpio* gpio, int pin) { gpio->dir |= (1u << pin); }
+  ```
+- ```c
+  static void gpio_set_input(Gpio* gpio, int pin) { gpio->dir &= ~(1u << pin); }
+  ```
+- ```c
+  static void gpio_write(Gpio* gpio, int pin, int value) {
+  ```
+- ```c
+  static void gpio_toggle(Gpio* gpio, int pin) { gpio->out ^= (1u << pin); }
+  ```
+- ```c
+  static int gpio_read(const Gpio* gpio, int pin) {
+  ```
+
+**Test Logic**:
+```c
+Gpio gpio = {0};
+gpio.in |= (1u << 4);
+int ok = (gpio_read(&gpio, 3) == 0) && (gpio_read(&gpio, 4) == 1);
+printf("[E011] dir=0x%X out=0x%X in=0x%X %s\n", gpio.dir, gpio.out, gpio.in, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E011_gpio_driver/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E011_gpio_driver/solution.c)
+- C source: [../../problems/embedded101/E011_gpio_driver/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E011_gpio_driver/solution.c)

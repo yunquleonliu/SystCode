@@ -72,5 +72,37 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: string.h, stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static void reset_handler_init(MemoryImage* image) {
+  ```
+- ```c
+  int main(void) {
+  ```
+- ```c
+  if (image.sbss[index] != 0) {
+  ```
+
+**Test Logic**:
+```c
+MemoryImage image = {
+.sidata = {0xCAFEBABE, 0x0000002A, 0x12345678, 0x0BADF00D},
+.sdata = {0, 0, 0, 0},
+.sbss = {1, 2, 3, 4, 5, 6}
+int ok_data = memcmp(image.sdata, image.sidata, sizeof(image.sdata)) == 0;
+int ok_bss = 1;
+for (size_t index = 0; index < sizeof(image.sbss) / sizeof(image.sbss[0]); ++index) {
+if (image.sbss[index] != 0) {
+ok_bss = 0;
+printf("[E001] data_copy=%s bss_zero=%s\n", ok_data ? "PASS" : "FAIL", ok_bss ? "PASS" : "FAIL");
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E001_c_runtime_initialization_crt0/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E001_c_runtime_initialization_crt0/solution.c)
+- C source: [../../problems/embedded101/E001_c_runtime_initialization_crt0/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E001_c_runtime_initialization_crt0/solution.c)

@@ -72,5 +72,42 @@
 ## Notes
 - Related roadmap item: [embedded_software_roadmap.md](/embedded101/embedded_software_roadmap.md)
 
+## Implementation Overview
+
+### Code Structure
+
+**Dependencies**: stdio.h, stdint.h
+
+**Key Functions**:
+- ```c
+  static void reg_set_bits(volatile uint32_t* reg, uint32_t mask) {
+  ```
+- ```c
+  static void reg_clear_bits(volatile uint32_t* reg, uint32_t mask) {
+  ```
+- ```c
+  static void reg_toggle_bits(volatile uint32_t* reg, uint32_t mask) {
+  ```
+- ```c
+  static uint32_t reg_read_bits(volatile uint32_t* reg, uint32_t mask) {
+  ```
+- ```c
+  int main(void) {
+  ```
+
+**Test Logic**:
+```c
+GPIO_ENABLE = (1u << 0),
+GPIO_OUTPUT = (1u << 1),
+GPIO_PULLUP = (1u << 2)
+GpioRegister gpio = {0};
+int ok = (reg_read_bits(&gpio.control, GPIO_ENABLE) != 0u) &&
+(reg_read_bits(&gpio.control, GPIO_OUTPUT) == 0u) &&
+(reg_read_bits(&gpio.control, GPIO_PULLUP) != 0u);
+printf("[E004] reg=0x%08X %s\n", gpio.control, ok ? "PASS" : "FAIL");
+return ok ? 0 : 1;
+```
+
+
 ## Reference Implementation
-- C source: [../../problems/embedded101/E004_register_bit_manipulation/solution.c](https://github.com/yunquleonliu/SystCode/blob/main/problems/embedded101/E004_register_bit_manipulation/solution.c)
+- C source: [../../problems/embedded101/E004_register_bit_manipulation/solution.c](https://raw.githubusercontent.com/yunquleonliu/SystCode/main/problems/embedded101/E004_register_bit_manipulation/solution.c)
